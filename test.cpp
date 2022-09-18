@@ -1,23 +1,19 @@
 #include <iostream>
 using namespace std;
 
-int fastpower(int a,int b)
+int gcd(int a,int b)
 {
-    int res=1;
-    while(b>0)
+    if(a==0 || b==0)
     {
-        if((b&1)!=0)
-        {
-            res=res*a;
-        }
-        a=a*a;
-        b=b>>1; //b=b/2
+        return max(a,b);
     }
-    return res;
+    int maxAB=max(a,b),minAB=min(a,b);
+    return gcd(maxAB-minAB,minAB);
 }
 
 int main()
 {
-    cout<<fastpower(3,5)<<endl;
+    int a=4,b=10;
+    cout<<gcd(a,b)<<endl;
     return 0;
 }
