@@ -10,7 +10,7 @@ int gcd(int a,int b)
     int maxAB=max(a,b),minAB=min(a,b);
     return gcd(maxAB-minAB,minAB);
 }
-
+ 
 
 
 // int gcd(int a,int b)
